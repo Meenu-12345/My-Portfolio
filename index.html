@@ -1,249 +1,141 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Meenu | Data Scientist</title>
-  <meta name="description" content="Portfolio of Meenu – Data Scientist. Machine Learning, Deep Learning, and end‑to‑end projects." />
-  <meta property="og:title" content="Meenu | Data Scientist" />
-  <meta property="og:description" content="Machine Learning • Deep Learning • MLOps-ready projects" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/og.png" />
-  <meta name="theme-color" content="#0ea5e9" />
-  <style>
-    :root{
-      --bg: #0b1020; /* deep blue/indigo */
-      --panel: #11172a;
-      --text: #e6eefc;
-      --muted: #a1a9bd;
-      --brand: #38bdf8; /* sky-400 */
-      --brand-2: #22d3ee; /* cyan-400 */
-      --accent: #60a5fa; /* blue-400 */
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
-      --maxw: 1080px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 20% 0%, rgba(34,211,238,0.06), transparent), radial-gradient(900px 500px at 80% 20%, rgba(96,165,250,0.06), transparent), var(--bg); color:var(--text); font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"}
-    a{color:var(--brand); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:var(--maxw); margin:0 auto; padding:28px 20px 64px}
-    header{display:flex; align-items:center; justify-content:space-between; gap:16px; position:sticky; top:0; backdrop-filter:saturate(140%) blur(8px); background:linear-gradient(180deg, rgba(11,16,32,.85), rgba(11,16,32,.65)); border-bottom:1px solid rgba(255,255,255,.06); padding:12px 20px; z-index:10}
-    header .brand{display:flex; align-items:center; gap:12px; font-weight:700}
-    .avatar{width:40px;height:40px;border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--accent)); display:grid; place-items:center; color:#00111a; font-weight:900}
-    nav a{margin:0 10px; color:var(--muted)}
-    nav a.active, nav a:hover{color:var(--text)}
-
-    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:22px; align-items:center; margin-top:32px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow)}
-    .hero .intro{padding:28px}
-    .kicker{letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-size:.8rem}
-    h1{font-size:clamp(28px, 5vw, 44px); line-height:1.15; margin:10px 0 10px}
-    .lead{font-size:1.05rem; color:var(--muted)}
-    .cta{display:flex; gap:12px; margin-top:16px; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:#0e152c; color:var(--text)}
-    .btn.primary{background:linear-gradient(135deg, var(--brand), var(--accent)); color:#00111a; border-color:transparent; font-weight:700}
-    .btn:hover{transform:translateY(-1px)}
-
-    .metrics{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:16px}
-    .metrics .tile{padding:18px; border-radius:14px; background:linear-gradient(180deg, rgba(56,189,248,.12), rgba(96,165,250,.06)); border:1px solid rgba(56,189,248,.25)}
-    .muted{color:var(--muted)}
-
-    section{margin-top:40px}
-    .section-title{display:flex; align-items:center; gap:10px; margin:0 0 16px}
-    .section-title h2{margin:0; font-size:1.4rem}
-
-    /* Skills */
-    .skill-tags{display:flex; flex-wrap:wrap; gap:10px}
-    .tag{padding:8px 11px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); font-size:.92rem}
-
-    /* Projects */
-    .grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px}
-    .project{padding:16px; border-radius:16px; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.08)}
-    .project h3{margin:0 0 6px; font-size:1.05rem}
-    .project p{margin:6px 0 10px; color:var(--muted)}
-    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
-    .badge{font-size:.8rem; padding:5px 8px; border-radius:10px; background:rgba(56,189,248,.14); border:1px solid rgba(56,189,248,.35)}
-    .links{display:flex; gap:10px; margin-top:12px}
-
-    /* Experience/Education */
-    .timeline{border-left:2px solid rgba(255,255,255,.12); padding-left:16px}
-    .time{font-size:.85rem; color:var(--muted)}
-
-    /* Contact */
-    .contact{display:grid; grid-template-columns:1fr 1fr; gap:16px}
-    .contact .panel{padding:18px}
-
-    footer{margin:52px 0 12px; text-align:center; color:var(--muted)}
-
-    /* Responsive */
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr 1fr}
-      .metrics{grid-template-columns:1fr 1fr 1fr}
-      .contact{grid-template-columns:1fr}
-    }
-    @media (max-width: 640px){
-      .grid{grid-template-columns:1fr}
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meenu Singh | Data Scientist</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <header>
-    <div class="brand"><div class="avatar">M</div> Meenu | Data Scientist</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <div class="container">
+<header>
+  <div class="brand">
+    <div class="avatar">
+      <img src="profile.jpeg" alt="Meenu Singh">
+    </div>
+    Meenu Singh
+  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+
+  <main class="container">
+
     <!-- HERO -->
     <section class="hero">
       <div class="intro card">
-        <div class="kicker">Open to roles & collaborations</div>
-        <h1>Turning data into decisions — ML & Deep Learning practitioner</h1>
-        <p class="lead">I'm Meenu, a data science enthusiast focusing on supervised learning, deep learning (CNNs/RNNs), and practical end‑to‑end projects. I love clean notebooks, reproducible pipelines, and clear visuals.</p>
-        <div class="cta">
-          <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
-          <a class="btn" href="https://github.com/USERNAME" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/USERNAME" target="_blank" rel="noopener">LinkedIn</a>
+        <div class="profile-img">
+          <img src="profile.jpeg" alt="Meenu Singh">
+        </div>
+        <div class="intro-text">
+          <div class="kicker">Open to roles & collaborations</div>
+          <h1>Turning data into decisions</h1>
+          <p class="lead">I'm Meenu, a data science enthusiast with hands-on experience in machine learning, deep learning (CNNs/RNNs), and practical end-to-end projects. I focus on clean notebooks, reproducible pipelines, and clear visualizations that help teams make data-driven decisions.</p>
+          <div class="cta">
+            <a class="btn" href="https://github.com/Meenu-12345" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/itsmeenu/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
         </div>
       </div>
-      <div class="card">
+
+      <div class="card metrics-container">
         <div class="metrics">
-          <div class="tile"><div class="kicker">Projects</div><div style="font-size:1.6rem; font-weight:800">3</div><div class="muted">End‑to‑end</div></div>
-          <div class="tile"><div class="kicker">Algorithms</div><div style="font-size:1.6rem; font-weight:800">ML + DL</div><div class="muted">Production‑ready</div></div>
-          <div class="tile"><div class="kicker">Tools</div><div style="font-size:1.6rem; font-weight:800">Py • Sk • TF</div><div class="muted">Python / Sklearn / TF‑Keras</div></div>
+          <div class="tile"><div class="kicker">Projects</div><div class="value">3</div><div class="muted">End‑to‑end</div></div>
+          <div class="tile"><div class="kicker">Algorithms</div><div class="value">ML + DL</div><div class="muted">Production‑ready</div></div>
+          <div class="tile"><div class="kicker">Tools</div><div class="value">Py • Sk • TF</div><div class="muted">Python / Sklearn / TF‑Keras</div></div>
         </div>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about">
-      <div class="section-title"><h2>About</h2></div>
-      <div class="card" style="padding:18px">
-        <p>Early‑career data scientist with hands‑on projects in classification, NLP, and computer vision. Comfortable with data wrangling, feature engineering, model selection, and experiment tracking. Strong communicator who documents assumptions and results.</p>
+      <h2>About Me</h2>
+      <div class="card">
+        <p>I am an early-career Data Scientist with hands-on experience in classification and natural language processing (NLP) projects.
+            I am skilled in feature engineering, model selection, and experiment tracking, with a focus on building reliable and reproducible solutions.
+            I enjoy exploring complex datasets, uncovering patterns, and translating insights into actionable strategies. Clear communication is one of my strengths—I document assumptions, methodology, and results to ensure transparency and reproducibility. Driven by curiosity and continuous learning, I am passionate about applying machine learning and AI techniques to solve real-world problems and contribute meaningfully to data-driven projects.</p>
       </div>
     </section>
 
     <!-- SKILLS -->
     <section id="skills">
-      <div class="section-title"><h2>Skills</h2></div>
-      <div class="card" style="padding:18px">
-        <div class="skill-tags" id="skills"></div>
-      </div>
+    <h2>Skills</h2>
+    <div class="card">
+        <div class="skill-tags" id="skillsContainer"></div>
+    </div>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects">
-      <div class="section-title"><h2>Projects</h2></div>
+      <h2>Projects</h2>
       <div class="grid" id="projectGrid"></div>
-    </section>
-
-    <!-- EXPERIENCE / EDUCATION -->
-    <section id="experience">
-      <div class="section-title"><h2>Experience & Education</h2></div>
-      <div class="grid">
-        <div class="card" style="padding:16px">
-          <h3>Education</h3>
-          <div class="timeline">
-            <p><strong>Bachelor's / Master's in [Your Field]</strong> <span class="time">— YYYY–YYYY</span><br><span class="muted">University/Institute Name</span></p>
-            <p><strong>Relevant Coursework</strong>: ML, DL, Statistics, SQL, Data Viz</p>
-          </div>
-        </div>
-        <div class="card" style="padding:16px">
-          <h3>Highlights</h3>
-          <ul>
-            <li>3 GitHub projects with clean READMEs and reproducible notebooks</li>
-            <li>Scikit‑learn, TensorFlow/Keras, PyTorch basics</li>
-            <li>EDA, feature engineering, model evaluation</li>
-          </ul>
-        </div>
-        <div class="card" style="padding:16px">
-          <h3>Certifications</h3>
-          <ul>
-            <li>Deep Learning Course (Udemy)</li>
-            <li>Machine Learning (Course/Certification)</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact">
-      <div class="section-title"><h2>Contact</h2></div>
+      <h2>Contact</h2>
       <div class="contact">
         <div class="panel card">
-          <h3>Let's talk</h3>
+          <h3>Let's Talk</h3>
           <p class="muted">Open to internships, full‑time roles, and collaboration on interesting datasets.</p>
-          <p><strong>Email</strong>: <a href="mailto:you@email.com">you@email.com</a></p>
-        </div>
-        <div class="panel card">
-          <h3>Links</h3>
-          <ul>
-            <li><a href="https://github.com/USERNAME" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/USERNAME" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://kaggle.com/USERNAME" target="_blank" rel="noopener">Kaggle</a></li>
-          </ul>
+          <p><strong>Email</strong>: <a href="mailto:you@email.com">meenusingh8532@email.com</a></p>
         </div>
       </div>
     </section>
 
-    <footer>
-      © <span id="year"></span> Meenu. Built with ❤ and deployed on GitHub Pages.
-    </footer>
-  </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Meenu Singh. Built with ❤ on GitHub Pages.
+  </footer>
 
   <script>
-    // === QUICK CUSTOMIZATION ===
-    // 1) Replace USERNAME with your GitHub/LinkedIn/Kaggle handles above.
-    // 2) Update the projects below with your 3 repositories.
-    // 3) Place your PDF resume in the repo root as "resume.pdf".
-
-    const SKILLS = [
-      'Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn',
-      'Scikit‑learn', 'TensorFlow / Keras', 'PyTorch (basics)',
-      'SQL (SQLite, MySQL)', 'Git & GitHub', 'EDA', 'Feature Engg', 'Model Eval',
-      'Streamlit / Gradio', 'Docker (basics)'
-    ];
-
-    const PROJECTS = [
-      {
-        title: 'Fake News Detection',
-        blurb: 'NLP pipeline with TF‑IDF + Linear models and a DL variant (BiLSTM).',
-        tech: ['Python', 'sklearn', 'TF‑IDF', 'BiLSTM'],
-        repo: 'https://github.com/USERNAME/Fake-News-Detection',
-        demo: ''
-      },
-      {
-        title: 'Image Classifier (CIFAR‑10)',
-        blurb: 'CNN with data augmentation, transfer learning baseline, and Grad‑CAM.',
-        tech: ['TensorFlow', 'Keras', 'CNN', 'Grad‑CAM'],
-        repo: 'https://github.com/USERNAME/cifar10-cnn',
-        demo: ''
-      },
-      {
-        title: 'End‑to‑end ML Pipeline',
-        blurb: 'From EDA → features → model → metrics → packaged with a clean README.',
-        tech: ['Pandas', 'sklearn', 'MLflow (optional)'],
-        repo: 'https://github.com/USERNAME/ml-pipeline-template',
-        demo: ''
-      }
-    ];
-
-    // === RENDER ===
+    // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    const skillsEl = document.getElementById('skills');
-    SKILLS.forEach(s => {
-      const span = document.createElement('span');
-      span.className = 'tag';
-      span.textContent = s;
-      skillsEl.appendChild(span);
+    // Skills
+    const SKILLS = [
+      'Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn',
+      'Scikit-learn', 'TensorFlow / Keras', 'PyTorch',
+      'SQL', 'Git', 'Feature Engineering', 'Model Evaluation',
+      'CNN', 'RNN', 'Neural Networks', 'NLTK', 'Spacy', 'NLP'
+    ];
+
+    const skillsEl = document.getElementById('skillsContainer');
+    SKILLS.forEach(skill => {
+        const span = document.createElement('span');
+        span.className = 'tag';
+        span.textContent = skill;
+        skillsEl.appendChild(span);
     });
+
+    // Projects
+    const PROJECTS = [
+        {
+            "title": "Fake News Detection",
+            "blurb": "A machine learning project that classifies news articles as fake or real using TF-IDF features and BiLSTM models.",
+            "tech": ["Python", "scikit-learn", "TensorFlow", "BiLSTM", "TF-IDF"],
+            "repo": "https://github.com/Meenu-12345/Fake-News-Detection"
+        },
+        {
+            "title": "Potato Disease Classification",
+            "blurb": "A deep learning project that classifies potato leaf diseases using Convolutional Neural Networks and image preprocessing.",
+            "tech": ["Python", "TensorFlow", "Keras", "CNN", "OpenCV"],
+            "repo": "https://github.com/Meenu-12345/Potato-Disease-Classification"
+        },
+        {
+            "title": "Tweet Analysis",
+            "blurb": "A machine learning project that analyzes and classifies tweets using TF-IDF features and Logistic Regression models.",
+            "tech": ["Python", "scikit-learn", "TF-IDF", "Logistic Regression"],
+            "repo": "https://github.com/Meenu-12345/Tweet-Analysis"
+        }
+    ];
+
 
     const grid = document.getElementById('projectGrid');
     PROJECTS.forEach(p => {
@@ -254,12 +146,12 @@
         <p>${p.blurb}</p>
         <div class="badges">${p.tech.map(t => `<span class="badge">${t}</span>`).join('')}</div>
         <div class="links">
-          ${p.repo ? `<a class="btn" href="${p.repo}" target="_blank" rel="noopener">GitHub ↗</a>` : ''}
-          ${p.demo ? `<a class="btn" href="${p.demo}" target="_blank" rel="noopener">Demo ↗</a>` : ''}
+          <a class="btn" href="${p.repo}" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
       `;
       grid.appendChild(card);
     });
   </script>
+
 </body>
 </html>
