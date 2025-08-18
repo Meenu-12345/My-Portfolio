@@ -45,7 +45,7 @@
 
       <div class="card metrics-container">
         <div class="metrics">
-          <div class="tile"><div class="kicker">Projects</div><div class="value">4</div><div class="muted">End‑to‑end</div></div>
+          <div class="tile"><div class="kicker">Projects</div><div class="value" id="projectCount"></div><div class="muted">End‑to‑end</div></div>
           <div class="tile"><div class="kicker">Algorithms</div><div class="value">ML + DL</div><div class="muted">Production‑ready</div></div>
           <div class="tile"><div class="kicker">Tools</div><div class="value">Py • Sk • TF</div><div class="muted">Python / Sklearn / TF‑Keras</div></div>
         </div>
@@ -116,32 +116,40 @@
 
     // Projects
     const PROJECTS = [
-      {
-          "title": "Fake News Detection",
-          "blurb": "A machine learning project that classifies news articles as fake or real using TF-IDF features and BiLSTM models.",
-          "tech": ["Python", "scikit-learn", "TensorFlow", "BiLSTM", "TF-IDF"],
-          "repo": "https://github.com/Meenu-12345/Fake-News-Detection"
-      },
-      {
-          "title": "Potato Disease Classification",
-          "blurb": "A deep learning project that classifies potato leaf diseases using Convolutional Neural Networks and image preprocessing.",
-          "tech": ["Python", "TensorFlow", "Keras", "CNN", "OpenCV"],
-          "repo": "https://github.com/Meenu-12345/Potato-Disease-Classification"
-      },
-      {
-          "title": "Tweet Analysis",
-          "blurb": "A machine learning project that analyzes and classifies tweets using TF-IDF features and Logistic Regression models.",
-          "tech": ["Python", "scikit-learn", "TF-IDF", "Logistic Regression"],
-          "repo": "https://github.com/Meenu-12345/Tweet-Analysis"
-      },
-      {
-          "title": "Loan Approval Predictor",
-          "blurb": "A machine learning project that predicts loan approval status based on applicant details such as income, credit history, and assets using classification models.",
-          "tech": ["Python", "scikit-learn", "Pandas", "KNN", "Logistic Regression"],
-          "repo": "https://github.com/Meenu-12345/Loan-Approval-Predictor"
-      }
-  ];
+    {
+        "title": "Fake News Detection",
+        "blurb": "A machine learning project that classifies news articles as fake or real using TF-IDF features and BiLSTM models.",
+        "tech": ["Python", "scikit-learn", "TensorFlow", "BiLSTM", "TF-IDF"],
+        "repo": "https://github.com/Meenu-12345/Fake-News-Detection"
+    },
+    {
+        "title": "Potato Disease Classification",
+        "blurb": "A deep learning project that classifies potato leaf diseases using Convolutional Neural Networks and image preprocessing.",
+        "tech": ["Python", "TensorFlow", "Keras", "CNN", "OpenCV"],
+        "repo": "https://github.com/Meenu-12345/Potato-Disease-Classification"
+    },
+    {
+        "title": "Tweet Analysis",
+        "blurb": "A machine learning project that analyzes and classifies tweets using TF-IDF features and Logistic Regression models.",
+        "tech": ["Python", "scikit-learn", "TF-IDF", "Logistic Regression"],
+        "repo": "https://github.com/Meenu-12345/Tweet-Analysis"
+    },
+    {
+        "title": "Loan Approval Predictor",
+        "blurb": "A machine learning project that predicts loan approval status based on applicant details such as income, credit history, and assets using classification models.",
+        "tech": ["Python", "scikit-learn", "Pandas", "KNN", "Logistic Regression"],
+        "repo": "https://github.com/Meenu-12345/Loan-Approval-Predictor"
+    },
+    {
+        "title": "Wine Quality Check",
+        "blurb": "A machine learning project that predicts wine quality based on physicochemical features such as acidity, sugar, and alcohol content using multiple ML models.",
+        "tech": ["scikit-learn", "Random Forest","Gradient Boosting", "SVM", "Logistic Regression", "KNN", "Naive Bayes Classifier"],
+        "repo": "https://github.com/Meenu-12345/Wine-Quality-Check"
+    }
+];
 
+
+    document.getElementById('projectCount').textContent = PROJECTS.length;
     const grid = document.getElementById('projectGrid');
     PROJECTS.forEach(p => {
       const card = document.createElement('article');
