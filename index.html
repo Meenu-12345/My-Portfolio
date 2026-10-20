@@ -42,26 +42,37 @@
         </div>
       </div>
 
-      <svg class="graph" viewBox="0 0 440 400" role="img" aria-label="Knowledge graph linking the areas I work in: LLM agents, RAG, reinforcement learning, concept classification, FastAPI and AWS">
-        <g>
-          <line x1="220" y1="200" x2="220" y2="52"/>
-          <line x1="220" y1="200" x2="368" y2="122"/>
-          <line x1="220" y1="200" x2="368" y2="288"/>
-          <line x1="220" y1="200" x2="220" y2="346"/>
-          <line x1="220" y1="200" x2="72" y2="288"/>
-          <line x1="220" y1="200" x2="72" y2="122"/>
-          <line x1="220" y1="52" x2="368" y2="122"/>
-          <line x1="72" y1="288" x2="220" y2="346"/>
-        </g>
-        <circle class="core" cx="220" cy="200" r="16"/>
-        <text x="220" y="236" style="font-weight:600">Knowledge graph</text>
-        <circle cx="220" cy="52" r="9"/><text x="220" y="30">LLM agents</text>
-        <circle cx="368" cy="122" r="9"/><text x="368" y="102">RAG</text>
-        <circle cx="368" cy="288" r="9"/><text x="368" y="318">FastAPI</text>
-        <circle cx="220" cy="346" r="9"/><text x="220" y="376">AWS</text>
-        <circle cx="72" cy="288" r="9"/><text x="72" y="318">Concept classifier</text>
-        <circle cx="72" cy="122" r="9"/><text x="72" y="102">Reinforcement learning</text>
-      </svg>
+      <div class="diagram">
+        <svg class="graph" viewBox="0 0 480 360" role="group" aria-label="Architecture of the systems I build. Select a highlighted part to read what I built.">
+          <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0 L10 5 L0 10 z"/></marker></defs>
+          <rect class="band" x="8" y="8" width="464" height="250" rx="12"/>
+          <g>
+            <line x1="108" y1="130" x2="146" y2="130"/>
+            <line x1="270" y1="120" x2="326" y2="74"/>
+            <line x1="270" y1="130" x2="326" y2="130"/>
+            <line x1="270" y1="140" x2="326" y2="186"/>
+            <line x1="210" y1="160" x2="210" y2="196"/>
+            <line x1="144" y1="322" x2="196" y2="322"/>
+            <line x1="320" y1="322" x2="352" y2="322"/>
+          </g>
+          <g class="hot" data-k="service" role="button" tabindex="0" aria-label="FastAPI on AWS"><rect class="box" x="20" y="16" width="126" height="26"/><text x="83" y="33">FastAPI on AWS</text></g>
+          <g><rect class="box" x="24" y="110" width="84" height="40"/><text x="66" y="135">Query</text></g>
+          <g class="hot core" data-k="orch" role="button" tabindex="0" aria-label="LLM orchestrator and agents"><rect class="box" x="150" y="100" width="120" height="60"/><text x="210" y="127">LLM orchestrator</text><text x="210" y="145">and agents</text></g>
+          <g class="hot" data-k="rag" role="button" tabindex="0" aria-label="RAG retriever"><rect class="box" x="330" y="50" width="130" height="36"/><text x="395" y="73">RAG retriever</text></g>
+          <g class="hot" data-k="kg" role="button" tabindex="0" aria-label="Knowledge graph"><rect class="box" x="330" y="112" width="130" height="36"/><text x="395" y="135">Knowledge graph</text></g>
+          <g class="hot" data-k="cls" role="button" tabindex="0" aria-label="Concept classifier"><rect class="box" x="330" y="174" width="130" height="36"/><text x="395" y="197">Concept classifier</text></g>
+          <g><rect class="box" x="150" y="200" width="120" height="40"/><text x="210" y="225">Grounded answer</text></g>
+          <text class="cap" x="24" y="288">Adaptive learning</text>
+          <g><rect class="box" x="24" y="300" width="120" height="44"/><text x="84" y="327">Student activity</text></g>
+          <g class="hot core" data-k="rl" role="button" tabindex="0" aria-label="Reinforcement learning recommender"><rect class="box" x="200" y="300" width="120" height="44"/><text x="260" y="327">RL recommender</text></g>
+          <g><rect class="box" x="356" y="300" width="110" height="44"/><text x="411" y="327">Next topics</text></g>
+        </svg>
+        <div class="detail" aria-live="polite">
+          <h3 id="dTitle"></h3>
+          <p id="dText"></p>
+          <ul class="tags" id="dTags"></ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -133,22 +144,27 @@
   <section id="skills">
     <div class="wrap">
       <h2>Skills</h2>
-      <div class="skills">
-        <div>
-          <h3>LLMs and agents</h3>
-          <ul class="tags"><li>LLM orchestration</li><li>Agentic AI</li><li>RAG</li><li>Knowledge graphs</li></ul>
+      <p class="muted skills-intro">Grouped by what I use them for. The line under each heading says where I used them.</p>
+      <div class="stack">
+        <div class="layer">
+          <div><h3>Generative AI and agents</h3><p>LLM orchestration, agent and RAG work at Hurrey Tech.</p></div>
+          <ul class="tags"><li>LLM orchestration</li><li>Agentic AI</li><li>RAG</li></ul>
         </div>
-        <div>
-          <h3>Machine learning and deep learning</h3>
-          <ul class="tags"><li>Reinforcement learning</li><li>Scikit-learn</li><li>PyTorch</li><li>TensorFlow / Keras</li><li>CNN</li><li>RNN</li><li>NLP</li><li>NLTK</li><li>spaCy</li></ul>
+        <div class="layer">
+          <div><h3>Machine learning and deep learning</h3><p>The RL recommender, the concept classifier and my personal projects.</p></div>
+          <ul class="tags"><li>Reinforcement learning</li><li>PyTorch</li><li>TensorFlow / Keras</li><li>Scikit-learn</li><li>CNN</li><li>RNN / BiLSTM</li><li>Feature engineering</li><li>Model evaluation</li></ul>
         </div>
-        <div>
-          <h3>Data and backend</h3>
+        <div class="layer">
+          <div><h3>NLP and knowledge graphs</h3><p>The YAGO knowledge graph, the concept classifier and text projects.</p></div>
+          <ul class="tags"><li>Knowledge graphs</li><li>YAGO</li><li>NLP</li><li>spaCy</li><li>NLTK</li><li>TF-IDF</li></ul>
+        </div>
+        <div class="layer">
+          <div><h3>Data and backend</h3><p>Every project, plus the services that serve my models.</p></div>
           <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQL</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Seaborn</li></ul>
         </div>
-        <div>
-          <h3>Cloud and tools</h3>
-          <ul class="tags"><li>AWS</li><li>Git</li><li>Feature engineering</li><li>Model evaluation</li></ul>
+        <div class="layer">
+          <div><h3>Cloud and workflow</h3><p>Deploying services at Hurrey Tech.</p></div>
+          <ul class="tags"><li>AWS</li><li>Git</li></ul>
         </div>
       </div>
     </div>
@@ -186,6 +202,29 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  const PARTS = {
+    orch: ['LLM orchestration and agentic AI', 'I built workflows where an LLM plans the steps, calls tools and combines the results into one answer.', ['LLM orchestration', 'Agentic AI', 'Python']],
+    rag: ['Retrieval-augmented generation', 'I built RAG pipelines so answers come from retrieved domain data, not only from the model\u2019s memory.', ['RAG', 'LLMs']],
+    kg: ['Knowledge graph on YAGO', 'I built a knowledge graph from YAGO that links entities and concepts, so other models can query and reuse them.', ['Knowledge graphs', 'YAGO']],
+    cls: ['Concept vs non-concept classifier', 'A deep learning model that takes two words and decides whether the pair is an academic concept.', ['Deep learning', 'NLP']],
+    rl: ['Reinforcement learning recommender', 'Built during my internship. It recommends which topics a teacher should teach and a student should learn next.', ['Reinforcement learning', 'Python']],
+    service: ['FastAPI services on AWS', 'I exposed models and agents as FastAPI services and deployed them on AWS.', ['FastAPI', 'AWS']]
+  };
+  const parts = document.querySelectorAll('.hot');
+  function show(k) {
+    const [title, text, tags] = PARTS[k];
+    document.getElementById('dTitle').textContent = title;
+    document.getElementById('dText').textContent = text;
+    const ul = document.getElementById('dTags');
+    ul.replaceChildren(...tags.map(t => { const li = document.createElement('li'); li.textContent = t; return li; }));
+    parts.forEach(p => p.classList.toggle('on', p.dataset.k === k));
+  }
+  parts.forEach(p => {
+    p.addEventListener('click', () => show(p.dataset.k));
+    p.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(p.dataset.k); } });
+  });
+  show('orch');
 </script>
 </body>
 </html>
